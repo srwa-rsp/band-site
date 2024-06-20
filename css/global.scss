@@ -1,0 +1,16 @@
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+    // padding: 0; // ASK IF THIS IS OK
+  }
+body{
+  padding: 0 1rem;
+}
+.headline{
+  padding: 1.5rem 0 1rem 0
+}
