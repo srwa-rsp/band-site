@@ -1,14 +1,46 @@
-$tablet-breakpoint: 768px;
-$desktop-breakpoint: 1280px;
+@import "variables";
 
-@mixin tablet{
-    @media (min-width: $tablet-breakpoint){
-        @content;
-    }
+// BREAKPOINTS
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
 }
-@mixin desktop{
-    @media (min-width: $desktop-breakpoint){
-        @content;
-    }
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
 }
- 
+
+//COMPONENTS
+@mixin primaryButton {
+  background-color: $primary-color;
+  color: white;
+  height: 2.5rem;
+  width: 100%;
+  &:hover {
+    background-color: $secondary-color;
+  }
+  @include tablet {
+    min-width: 9.4rem;
+    padding: 0 2rem;
+  }
+}
+
+// RESPONSIVE FONTS
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-values in $fs-map {
+    $fs-size: map-get($fs-values, size);
+    $fs-weight: map-get($fs-values, weight);
+
+    @if $fs-breakpoint == null {
+      font-size: $fs-size;
+      font-weight: $fs-weight;
+    } @else  {
+      @include tablet {
+        font-size: $fs-size;
+        font-weight: $fs-weight;
+      }
+    }
+  }
+}

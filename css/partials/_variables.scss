@@ -1,5 +1,46 @@
+//BREAKPOINTS
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+//COLORS
 $primary-color: #323232;
 $secondary-color: #000000;
 $silver: #AFAFAF;
 $mercury: #e1e1e1;
 $alabaster: #fafafa;
+
+//PADDINGS
+$layout-padding-mobile: 0 1rem;
+$layout-padding-tablet: 0 2.3rem;
+$headline-padding-mobile: 1.5rem 0 1rem 0;
+$headline-padding-tablet: 3rem 0 2.3rem 0;
+
+//FONT SIZES
+$page-logo-font:(
+    null  : (size: 2rem, weight:400),
+    768px : (size: 2.5rem, weight:400),
+);
+$page-header-font: (
+  null  : (size: 1.5rem, weight:700),
+  768px : (size: 3.8rem, weight:700),
+);
+$section-header-font: (
+  null  : (size: 1.5rem, weight:700),
+  768px : (size: 2.3rem, weight:700),
+);
+$subheader-font: (
+  null  : (size: 0.9rem, weight:600),
+  768px : (size: 1.5rem, weight:600),
+);
+$body-copy-font: (
+  null  : (size: 0.8rem, weight:400),
+  768px : (size: 0.9rem, weight:400),
+);
+$footer-font: (
+  null  : (size: 0.8rem, weight:400),
+  768px : (size: 0.9rem, weight:400),
+);
+$labels-buttons-font: (
+  null  : (size: 0.63rem, weight:700),
+  768px : (size: 0.8rem, weight:400),
+);
