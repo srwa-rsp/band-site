@@ -1,16 +1,123 @@
+@import "partials/typography";
+@import "partials/variables";
+@import "partials/mixins";
 
 html {
-    box-sizing: border-box;
-    font-size: 100%;
+  box-sizing: border-box;
+  font-size: 100%;
+  font-family: "AvenirNextLTPro";
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  // padding: 0; // ASK IF THIS IS OK
+}
+
+body {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.headline {
+  padding: 1.5rem 0 1rem 0;
+  @include tablet {
+    padding: $layout-padding-tablet;
+  }
+}
+h1{
+  @include font-size($page-logo-font);
+}
+h2 {
+  @include font-size($page-header-font);
+}
+h3 {
+  @include font-size($section-header-font);
+}
+.subheader {
+  @include font-size($subheader-font);
+}
+.body-copy {
+  @include font-size($body-copy-font);
+}
+.footer {
+  @include font-size($footer-font);
+}
+.labels-buttons {
+  @include font-size($labels-buttons-font);
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $primary-color;
+  text-align: center;
+  // height: 25vh;
+
+  @include tablet{
+    // height: 15vh;
+    padding: $layout-padding-tablet;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
   }
 
-  *, *:before, *:after {
-    box-sizing: inherit;
-    // padding: 0; // ASK IF THIS IS OK
+  &__logo {
+    margin: 1rem 0 0 0;
+    color: white;
+    // height: 1.3rem;
+    // width: 7.5rem;
+    align-self: center;
+    @include tablet{
+      margin: 0;
+    }
   }
-body{
-  padding: 0 1rem;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    padding: 1rem;
+    flex: 1;
+     @include tablet{
+      max-width: fit-content;
+      padding: 2rem 0;
+      margin: 0 2rem;
+     }
+
+    &:hover,
+    &--active {
+      border-bottom: 5px solid white;
+    }
+  }
+
+  &__link {
+    color: $mercury;
+
+    &:hover,
+    &--active {
+      color: white;
+    }
+
+    &--active {
+      font-weight: bold;
+    }
+  }
 }
-.headline{
-  padding: 1.5rem 0 1rem 0
-}
+
+
