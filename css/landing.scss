@@ -1,0 +1,48 @@
+@import "partials/typography";
+@import "partials/variables";
+@import "partials/mixins";
+@import "global.scss";
+
+.about{
+    padding: $layout-padding-mobile;
+    display: flex;
+    flex-direction: column;
+    @include tablet{
+        padding: $layout-padding-tablet
+    }
+    &__article{
+        @include tablet{
+            padding: 0 4rem;
+        }
+
+    }
+    @include font-size($body-copy-font);
+    &__image{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    &__quote{
+       @include font-size($subheader-font);
+
+       &--vocalist{
+        @include font-size($body-copy-font);
+        display: inline-block;
+        margin: 1rem 0;
+       }
+    }
+
+    &__subheader{
+        display: inline-block;
+        @extend .headline
+    }
+    &__copydeck{
+        margin: 0;
+    }
+
+    &__container{
+        @include tablet{
+            display: flex;
+            gap: 2rem;
+        }
+    }
+}
