@@ -6,14 +6,18 @@
 .about{
     display: flex;
     flex-direction: column;
-    padding: $layout-padding-mobile;
+
+    @include padding-x($spacing-small);
+    @include padding-y($spacing-small);
+
     @include tablet{
-        padding: $layout-padding-tablet
+        @include padding-x($spacing-medium);
+        @include padding-y($spacing-medium);
     }
 
     &__article{
         @include tablet{
-            padding: 0 4rem;
+            @include padding-x($spacing-large);
         }
 
     }
@@ -54,9 +58,12 @@
 
 .gallery{
 
-    padding: $layout-padding-mobile;
+    @include padding-x($spacing-small);
+    @include padding-y($spacing-small);
+
     @include tablet{
-        padding: $layout-padding-tablet
+        @include padding-x($spacing-medium);
+        @include padding-y($spacing-medium);
     }
 
     display: flex;

@@ -12,20 +12,17 @@
   }
 }
 
-//COMPONENTS
-@mixin primaryButton {
-  background-color: $primary-color;
-  color: white;
-  height: 2.5rem;
-  width: 100%;
-  &:hover {
-    background-color: $secondary-color;
-  }
-  @include tablet {
-    min-width: 9.4rem;
-    padding: 0 2rem;
-  }
+//SPACING
+@mixin padding-x($size) {
+  padding-left: $size;
+  padding-right: $size;
 }
+
+@mixin padding-y($size) {
+  padding-top: $size;
+  padding-bottom: $size;
+}
+
 
 // RESPONSIVE FONTS
 @mixin font-size($fs-map) {
@@ -47,3 +44,18 @@
     }
   }
 }
+
+//COMPONENTS
+// @mixin primaryButton {
+//   background-color: $primary-color;
+//   color: white;
+//   height: 2.5rem;
+//   width: 100%;
+//   &:hover {
+//     background-color: $secondary-color;
+//   }
+//   @include tablet {
+//     min-width: 9.4rem;
+//     padding: 0 2rem;
+//   }
+// }

@@ -2,6 +2,11 @@
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
+//SPACING
+$spacing-small: 1rem;
+$spacing-medium: 2.3rem;
+$spacing-large: 4rem;
+
 //COLORS
 $primary-color: #323232;
 $secondary-color: #000000;
@@ -10,10 +15,8 @@ $mercury: #e1e1e1;
 $alabaster: #fafafa;
 
 //PADDINGS
-$layout-padding-mobile: 0 1rem;
-$layout-padding-tablet: 0 2.3rem;
-$headline-padding-mobile: 1.5rem 0 1rem 0;
-$headline-padding-tablet: 3rem 0 2.3rem 0;
+$headline-padding-mobile: 0 0 1rem 0;
+$headline-padding-tablet: 0 0 2.3rem 0;
 
 //FONT SIZES
 $page-logo-font:(
