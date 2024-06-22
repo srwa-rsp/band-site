@@ -32,14 +32,17 @@
   @each $fs-breakpoint, $fs-values in $fs-map {
     $fs-size: map-get($fs-values, size);
     $fs-weight: map-get($fs-values, weight);
+    $fs-line: map-get($fs-values, line);
 
     @if $fs-breakpoint == null {
       font-size: $fs-size;
       font-weight: $fs-weight;
+      line-height: $fs-line;
     } @else  {
       @include tablet {
         font-size: $fs-size;
         font-weight: $fs-weight;
+        line-height: $fs-line;
       }
     }
   }

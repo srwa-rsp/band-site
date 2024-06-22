@@ -17,24 +17,24 @@ $headline-padding-tablet: 3rem 0 2.3rem 0;
 
 //FONT SIZES
 $page-logo-font:(
-    null  : (size: 2rem, weight:400),
-    768px : (size: 2.5rem, weight:400),
+    null  : (size: 2.5rem, weight:400),
+    768px : (size: 2.8rem, weight:400),
 );
 $page-header-font: (
-  null  : (size: 1.5rem, weight:700),
-  768px : (size: 3.8rem, weight:700),
+  null  : (size: 2rem, weight:600),
+  768px : (size: 4.8rem, weight:700),
 );
 $section-header-font: (
-  null  : (size: 1.5rem, weight:700),
+  null  : (size: 2rem, weight:600),
   768px : (size: 2.3rem, weight:700),
 );
 $subheader-font: (
-  null  : (size: 0.9rem, weight:600),
-  768px : (size: 1.5rem, weight:600),
+  null  : (size: 1.4rem, weight:600, line: 2rem),
+  768px : (size: 2.2rem, weight:600, line: 2rem),
 );
 $body-copy-font: (
-  null  : (size: 0.8rem, weight:400),
-  768px : (size: 0.9rem, weight:400),
+  null  : (size: 1.2rem, weight:400, line:1.6rem),
+  768px : (size: 1.1rem, weight:400, line: 1.6rem),
 );
 $footer-font: (
   null  : (size: 0.8rem, weight:400),
