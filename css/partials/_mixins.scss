@@ -36,7 +36,7 @@
       font-weight: $fs-weight;
       line-height: $fs-line;
     } @else  {
-      @include tablet {
+      @media (min-width: $fs-breakpoint) {
         font-size: $fs-size;
         font-weight: $fs-weight;
         line-height: $fs-line;
