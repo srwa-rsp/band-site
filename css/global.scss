@@ -33,29 +33,42 @@ a {
     padding: $headline-padding-tablet;
   }
 }
+
 h1{
   @include font-size($page-logo-font);
 }
+
 h2 {
   @include font-size($page-header-font);
 }
+
 h3 {
   @include font-size($section-header-font);
   margin: 0;
   @extend .headline
 }
+
+h4{
+  @include font-size($page-logo-font);
+}
+
 h5{
+  @include font-size($labels-buttons-font);
   margin: 0;
 }
+
 .subheader {
   @include font-size($subheader-font);
 }
+
 .body-copy {
   @include font-size($body-copy-font);
 }
+
 .footer {
   @include font-size($footer-font);
 }
+
 .labels-buttons {
   @include font-size($labels-buttons-font);
 }
@@ -74,6 +87,10 @@ h5{
     justify-content: flex-start;
     align-items: center;
     gap: 2rem;
+  }
+
+  @include desktop{
+    @include padding-x($spacing-large)
   }
 
   &__logo {
@@ -128,16 +145,20 @@ h5{
   background-repeat: no-repeat;
   background-position: center;
   height:42vh;
- display: flex;
- justify-content: space-between;
- align-items: center;
- position: relative;
- @include padding-x($spacing-small);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  @include padding-x($spacing-small);
  
  @include tablet{
   @include padding-x($spacing-medium);
   height: 100vh;
  }
+
+ @include desktop{
+  @include padding-x($spacing-large)
+}
 
  &::before{
    content: '';
@@ -170,14 +191,19 @@ h5{
     @include padding-y($spacing-medium);
   }
 
+  @include desktop{
+    @include padding-x($spacing-large)
+  }
+
   &__social{
     @include tablet{
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content:space-between;
     }
-    &--hidden{
-      width: 20rem;
+    @include desktop{
+      justify-content: flex-start;
+      gap: 6rem;
     }
   }
 
@@ -190,6 +216,11 @@ h5{
     @include tablet{
       display: flex;
       justify-content: space-between;
+    }
+
+    @include desktop{
+      justify-content: flex-start;
+      gap: 6rem;
     }
   }
 
