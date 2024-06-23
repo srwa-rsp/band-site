@@ -60,8 +60,14 @@ h2 {
 }
 @media (min-width: 768px) {
   h2 {
-    font-size: 4.8rem;
+    font-size: 4rem;
     font-weight: 700;
+  }
+}
+@media (min-width: 1280px) {
+  h2 {
+    font-size: 5rem;
+    font-weight: 600;
   }
 }
 
@@ -142,8 +148,8 @@ h6 {
 }
 @media (min-width: 1280px) {
   .main-nav {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 .main-nav__logo {
@@ -190,10 +196,7 @@ h6 {
 }
 
 .hero {
-  background-image: url("/assets/Images/hero-bio.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url("/assets/Images/hero-bio.jpg") no-repeat center/cover;
   height: 42vh;
   display: flex;
   justify-content: space-between;
@@ -211,8 +214,8 @@ h6 {
 }
 @media (min-width: 1280px) {
   .hero {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 .hero::before {
@@ -232,14 +235,14 @@ h6 {
 
 .footer {
   background-color: #323232;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 2.3rem;
-  padding-bottom: 2.3rem;
   color: white;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2.3rem;
+  padding-bottom: 2.3rem;
 }
 @media (min-width: 768px) {
   .footer {
@@ -291,8 +294,8 @@ h6 {
 }
 @media (min-width: 1280px) {
   .footer {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 0.5fr);

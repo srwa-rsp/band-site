@@ -5,7 +5,7 @@ $desktop-breakpoint: 1280px;
 //SPACING
 $spacing-small: 1rem;
 $spacing-medium: 2.3rem;
-$spacing-large: 4rem;
+$spacing-large: 5rem;
 
 //COLORS
 $primary-color: #323232;
@@ -21,11 +21,11 @@ $headline-padding-tablet: 0 0 2.3rem 0;
 //FONT SIZES
 $page-logo-font:(
     null  : (size: 2.4rem, weight:400),
-    // 768px : (size: 2.6rem, weight:400),
 );
 $page-header-font: (
   null  : (size: 2rem, weight:600),
-  768px : (size: 4.8rem, weight:700),
+  768px : (size: 4rem, weight:700),
+  1280px : (size: 5rem, weight:600),
 );
 $section-header-font: (
   null  : (size: 2rem, weight:600),
@@ -33,14 +33,13 @@ $section-header-font: (
 );
 $subheader-font: (
   null  : (size: 1.4rem, weight:600, line: 2rem),
-  768px : (size: 2.2rem, weight:600, line: 2rem),
+  768px : (size: 1.8rem, weight:600, line: 2rem),
 );
 $body-copy-font: (
   null  : (size: 1.2rem, weight:400, line:1.6rem),
 );
 $footer-font: (
   null  : (size: 1rem, weight:400 , line:1.6rem),
-  // 768px : (size: 0.9rem, weight:400),
 );
 $footer-contact-font: (
   null  : (size: 2.2rem, weight:600),
