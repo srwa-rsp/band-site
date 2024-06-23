@@ -14,14 +14,15 @@
         @include padding-x($spacing-medium);
         @include padding-y($spacing-medium);
     }
+
     @include desktop{
         @include padding-x($spacing-large)
       }
+
     &__article{
         @include tablet{
             @include padding-x($spacing-large);
         }
-
     }
 
     @include font-size($body-copy-font);
@@ -31,10 +32,8 @@
     }
 
     &__quote{
-
+        color: $primary-color;
        @include font-size($subheader-font);
-       color: $primary-color;
-
 
         @include desktop{
             display: inline-block;
@@ -68,7 +67,9 @@
 }
 
 .gallery{
-
+    display: flex;
+    flex-direction: column;
+    background-color: $alabaster;
     @include padding-x($spacing-small);
     @include padding-y($spacing-small);
 
@@ -80,10 +81,6 @@
     @include desktop{
         @include padding-x($spacing-large)
       }
-
-    display: flex;
-    flex-direction: column;
-    background-color: $alabaster;
     
     &__collection{
         display: flex;
