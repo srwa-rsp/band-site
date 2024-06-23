@@ -20,8 +20,8 @@ $headline-padding-tablet: 0 0 2.3rem 0;
 
 //FONT SIZES
 $page-logo-font:(
-    null  : (size: 2.5rem, weight:400),
-    768px : (size: 2.8rem, weight:400),
+    null  : (size: 2.4rem, weight:400),
+    // 768px : (size: 2.6rem, weight:400),
 );
 $page-header-font: (
   null  : (size: 2rem, weight:600),
@@ -37,11 +37,14 @@ $subheader-font: (
 );
 $body-copy-font: (
   null  : (size: 1.2rem, weight:400, line:1.6rem),
-  768px : (size: 1.1rem, weight:400, line: 1.6rem),
 );
 $footer-font: (
-  null  : (size: 0.8rem, weight:400),
-  768px : (size: 0.9rem, weight:400),
+  null  : (size: 1rem, weight:400 , line:1.6rem),
+  // 768px : (size: 0.9rem, weight:400),
+);
+$footer-contact-font: (
+  null  : (size: 2.2rem, weight:600),
+  768px : (size: 2.5rem, weight:600),
 );
 $labels-buttons-font: (
   null  : (size: 0.63rem, weight:700),
