@@ -14,7 +14,9 @@
         @include padding-x($spacing-medium);
         @include padding-y($spacing-medium);
     }
-
+    @include desktop{
+        @include padding-x($spacing-large)
+      }
     &__article{
         @include tablet{
             @include padding-x($spacing-large);
@@ -65,6 +67,10 @@
         @include padding-x($spacing-medium);
         @include padding-y($spacing-medium);
     }
+
+    @include desktop{
+        @include padding-x($spacing-large)
+      }
 
     display: flex;
     flex-direction: column;
