@@ -1,12 +1,9 @@
-@import "partials/typography";
-@import "partials/variables";
-@import "partials/mixins";
-@import "global.scss";
+@use "partials/typography";
+@use "partials/variables";
+@use "partials/mixins";
+@use "global.scss";
 
-.about{
-    display: flex;
-    flex-direction: column;
-
+.comment, .about, .gallery{
     @include padding-x($spacing-small);
     @include padding-y($spacing-small);
 
@@ -18,6 +15,23 @@
     @include desktop{
         @include padding-x($spacing-large)
       }
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+
+    // @include padding-x($spacing-small);
+    // @include padding-y($spacing-small);
+
+    // @include tablet{
+    //     @include padding-x($spacing-medium);
+    //     @include padding-y($spacing-medium);
+    // }
+
+    // @include desktop{
+    //     @include padding-x($spacing-large)
+    //   }
 
     &__article{
         @include tablet{
@@ -70,17 +84,17 @@
     display: flex;
     flex-direction: column;
     background-color: $alabaster;
-    @include padding-x($spacing-small);
-    @include padding-y($spacing-small);
+    // @include padding-x($spacing-small);
+    // @include padding-y($spacing-small);
 
-    @include tablet{
-        @include padding-x($spacing-medium);
-        @include padding-y($spacing-medium);
-    }
+    // @include tablet{
+    //     @include padding-x($spacing-medium);
+    //     @include padding-y($spacing-medium);
+    // }
 
-    @include desktop{
-        @include padding-x($spacing-large)
-      }
+    // @include desktop{
+    //     @include padding-x($spacing-large)
+    //   }
     
     &__collection{
         display: flex;
@@ -103,3 +117,70 @@
         }
     }
 }
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__form{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        // align-items: center;
+        // justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 0.8rem;
+
+        @include tablet{
+           padding: 1rem;
+        }
+    }
+
+    &__input {
+        min-height: 2.5rem;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 4px;
+        border: 1px solid $mercury;
+        font-size: 1rem;
+        // background-color: ;
+        margin-top: 4px;
+
+        @include tablet{
+            min-height: 2rem;
+        }
+
+      }
+
+      &__input:focus{
+        outline: 1px solid #d22d2d;
+      }
+
+      &__form-item{
+        flex-basis: auto;
+      }
+      &__form-list{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
+        gap: 1rem;
+        height: 50vh;
+      }
+
+      &__avatar{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        align-self: flex-start;
+        margin-top: 1.5rem;
+        align-self: flex-start;
+        flex-basis: 0;
+
+      }
+}
+
+
+  
