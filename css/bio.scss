@@ -1,62 +1,52 @@
 @use "partials/typography";
-@use "partials/variables";
+@use "partials/variables" as vars;
 @use "partials/mixins";
-@use "global.scss";
+@use "partials/global";
 
 .comment, .about, .gallery{
-    @include padding-x($spacing-small);
-    @include padding-y($spacing-small);
+    @include mixins.padding-x(vars.$spacing-small);
+    @include mixins.padding-y(vars.$spacing-small);
 
-    @include tablet{
-        @include padding-x($spacing-medium);
-        @include padding-y($spacing-medium);
+    @include mixins.tablet{
+        @include mixins.padding-x(vars.$spacing-medium);
+        @include mixins.padding-y(vars.$spacing-medium);
     }
 
-    @include desktop{
-        @include padding-x($spacing-large)
+    @include mixins.desktop{
+        @include mixins.padding-x(vars.$spacing-large)
       }
+
 }
 
 .about{
     display: flex;
     flex-direction: column;
 
-    // @include padding-x($spacing-small);
-    // @include padding-y($spacing-small);
-
-    // @include tablet{
-    //     @include padding-x($spacing-medium);
-    //     @include padding-y($spacing-medium);
-    // }
-
-    // @include desktop{
-    //     @include padding-x($spacing-large)
-    //   }
-
     &__article{
-        @include tablet{
-            @include padding-x($spacing-large);
+        @include mixins.tablet{
+            @include mixins.padding-x(vars.$spacing-large);
         }
     }
 
-    @include font-size($body-copy-font);
+    @include mixins.font-size(vars.$body-copy-font);
     &__image{
         width: 100%;
         margin-bottom: 1rem;
     }
 
     &__quote{
-        color: $primary-color;
-       @include font-size($subheader-font);
+        color: vars.$primary-color;
+        display: block;
+       @include mixins.font-size(vars.$subheader-font);
 
-        @include desktop{
+        @include mixins.desktop{
             display: inline-block;
             width: 85%;
         }
         
        &--vocalist{
-        @include font-size($subheader-font, -0.4rem);
-        color: $primary-color;
+        @include mixins.font-size(vars.$subheader-font, -0.4rem);
+        color: vars.$primary-color;
         display: inline-block;
         margin: 1rem 0;
        }
@@ -65,7 +55,7 @@
     &__subheader{
         display: inline-block;
         @extend .headline;
-        @include font-size($subheader-font)
+        @include mixins.font-size(vars.$subheader-font)
     }
 
     &__copydeck{
@@ -73,8 +63,11 @@
     }
 
     &__container{
-        @include tablet{
-            display: flex;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        @include mixins.tablet{
+            flex-direction: row;
             gap: 2rem;
         }
     }
@@ -83,19 +76,8 @@
 .gallery{
     display: flex;
     flex-direction: column;
-    background-color: $alabaster;
-    // @include padding-x($spacing-small);
-    // @include padding-y($spacing-small);
+    background-color: vars.$alabaster;
 
-    // @include tablet{
-    //     @include padding-x($spacing-medium);
-    //     @include padding-y($spacing-medium);
-    // }
-
-    // @include desktop{
-    //     @include padding-x($spacing-large)
-    //   }
-    
     &__collection{
         display: flex;
         flex-direction: column;
@@ -104,7 +86,7 @@
         align-items: center;
         width: 100%;
 
-        @include tablet{
+        @include mixins.tablet{
             flex-direction: row;
             flex-wrap: wrap;
         }
@@ -112,7 +94,7 @@
 
     &__item{
         width:100%;
-        @include tablet{
+        @include mixins.tablet{
             width: 30%;
         }
     }
@@ -121,19 +103,15 @@
 .comment{
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     &__form{
         width: 100%;
         display: flex;
         flex-direction: row;
-        // align-items: center;
-        // justify-content: center;
         align-items: flex-start;
-        gap: 2rem;
-        padding: 0.8rem;
+        gap: 1rem;
 
-        @include tablet{
+        @include mixins.tablet{
            padding: 1rem;
         }
     }
@@ -143,12 +121,12 @@
         width: 100%;
         padding: 1rem;
         border-radius: 4px;
-        border: 1px solid $mercury;
+        border: 1px solid vars.$mercury;
         font-size: 1rem;
         // background-color: ;
         margin-top: 4px;
 
-        @include tablet{
+        @include mixins.tablet{
             min-height: 2rem;
         }
 
@@ -179,6 +157,37 @@
         align-self: flex-start;
         flex-basis: 0;
 
+      }
+
+      &__list{
+        display: flex;
+        flex-direction: column;
+
+      }
+      &__info-container{
+        width: 100%;
+      }
+      &__item{
+        display: flex;
+        gap: 1rem;
+        border-top: 2px solid vars.$mercury;
+        padding-top: 1rem;
+      }
+      &__blank-avatar{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-color: vars.$mercury;
+        flex-shrink: 0;
+      }
+
+      &__info{
+        display: flex;
+        justify-content: space-between;
+
+        &--date{
+            color: vars.$silver;
+        }
       }
 }
 
