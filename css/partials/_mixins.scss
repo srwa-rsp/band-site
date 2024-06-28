@@ -2,12 +2,12 @@
 
 // BREAKPOINTS
 @mixin tablet {
-  @media (min-width: vars.$tablet-breakpoint) {
+  @media (min-width: $tablet-breakpoint) {
     @content;
   }
 }
 @mixin desktop {
-  @media (min-width: vars.$desktop-breakpoint) {
+  @media (min-width: $desktop-breakpoint) {
     @content;
   }
 }
