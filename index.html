@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="/css/landing.css" />
+    <link rel="stylesheet" href="/css/bio.css" />
+    <script src="/scripts/index-page.js" defer></script>
     <title>BandSite</title>
   </head>
   <body>
@@ -37,12 +37,12 @@
             <strong class="about__quote">
               “We push each other to be the best. It’s not uncommon for one of
               us to say ‘this needs to be better, back to the drawing board” </strong
-            ><br />
+            >
             <strong class="about__quote--vocalist">
               - Lead vocalist of The Bees Knees</strong
             >
           </p>
-          <span class="about__subheader">The Bees Knees</span><br />
+          <span class="about__subheader">The Bees Knees</span>
           <div class="about__container">
             <p class="about__copydeck">
               The Bees Knees is a pop rock band originating from San Francisco,
@@ -55,7 +55,7 @@
               support, pushing The Bees Knees to sign with a well known record
               label.
             </p>
-            <br />
+           
             <p class="about__copydeck">
               From there, the band has soared, gaining international recognition
               and ranking in the top 10 on the Poster Charts. New fans
@@ -115,16 +115,15 @@
       </section>
       <section class="comment">
         <h3>Join the Conversation</h3>
-
         <form action="" class="comment__form">
           <img
-          src="/assets/Images/Mohan-muruge.jpg"
-          alt="Avatar"
-          class="comment__avatar"
-        />
+            src="/assets/Images/Mohan-muruge.jpg"
+            alt="Avatar"
+            class="comment__avatar"
+          />
           <ul class="comment__form-list">
             <li class="comment__form-item">
-              <label for="name">Name</label> <br />
+              <label for="name">Name</label> 
               <input
                 class="comment__input"
                 type="text"
@@ -135,7 +134,7 @@
               />
             </li>
             <li class="comment__form-item">
-              <label for="comment">comment</label><br />
+              <label for="comment">comment</label>
               <input
                 class="comment__input"
                 type="textarea"
@@ -146,15 +145,27 @@
               />
             </li>
             <li class="comment__form-item">
-
               <button class="button">comment</button>
             </li>
-            
           </ul>
-
         </form>
-
-        <div class="comment__list"></div>
+        <ul class="comment__list">
+          <li class="comment__item">
+            <div class="comment__blank-avatar"></div>
+            <div class="comment__info-container">
+              <div class="comment__info">
+                <span>Victor</span
+                ><span class="comment__info--date">11/02/2023</span>
+              </div>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
+                eius, delectus animi omnis fugiat fugit ipsam beatae blanditiis
+                quo odit vero facere harum consequatur velit corrupti modi nemo
+                quasi ex.
+              </p>
+            </div>
+          </li>
+        </ul>
       </section>
     </main>
     <footer class="footer">
@@ -190,24 +201,24 @@
       <div class="footer__management">
         <h6>The Bees Knees Management</h6>
         <p>
-          503 Broadway Penthouse,<br />
-          New York, NY 10012, USA
+          <span> 503 Broadway Penthouse,</span
+          ><span> New York, NY 10012, USA</span>
         </p>
         <p>info@thebeesknees.com</p>
       </div>
       <div class="footer__artist">
         <h6>Limitless Artist Group</h6>
         <p>
-          Booking Agent for <br />
-          US / South America / Japan
+          <span> Booking Agent for</span
+          ><span> US / South America / Japan</span>
         </p>
         <p>bookings@limitlessag.com</p>
       </div>
       <div class="footer__entertainment">
         <h6>ARCH Entertainment</h6>
         <p>
-          Booking Agent for <br />
-          UK / EU / AU
+          <span>Booking Agent for</span>
+          <span> UK / EU / AU</span>
         </p>
         <p>bookings@archentertainment.com</p>
       </div>
