@@ -15,12 +15,12 @@ function getCurrentDate() {
     return `${day}/${month}/${year}`;
 }
 
-function renderComments() {
+function renderComments(array) {
     // Clear existing comments
     commentListContainer.innerHTML = '';
 
     // Add each comment to the container
-    for (let i = 0; i < commentsList.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         const commentElement = document.createElement("li");
         commentElement.classList.add("comment__item");
         commentListContainer.appendChild(commentElement);
@@ -38,16 +38,16 @@ function renderComments() {
         container.appendChild(commentInfo);
     
         const nameElement = document.createElement("span");
-        nameElement.innerText = commentsList[i].name;
+        nameElement.innerText = array[i].name;
         commentInfo.appendChild(nameElement);
         
         const dateElement = document.createElement("span");
-        dateElement.innerText = commentsList[i].date;
+        dateElement.innerText = array[i].date;
         dateElement.classList.add("comment__info--date");
         commentInfo.appendChild(dateElement);
     
         const messageElement = document.createElement("p");
-        messageElement.innerText = commentsList[i].message;
+        messageElement.innerText = array[i].message;
         container.appendChild(messageElement);
     }
 }
@@ -71,10 +71,10 @@ form.addEventListener("submit", (event) => {
     console.log(commentsList);
 
     // Re-render
-    renderComments();
+    renderComments(commentsList);
 
 +    event.target.reset();
 });
 
 // Initial render
-renderComments();
+renderComments(commentsList);
