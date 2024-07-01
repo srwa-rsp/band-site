@@ -38,11 +38,9 @@ p span{
 .button{
   background-color:vars.$primary-color;
   color: white;
-  // height: 2.5rem;
   width: 100%;
   border-radius: 4px;
   cursor: pointer;
-  // min-width: 9.4rem;
   padding: 0.5rem 2rem;
 
   @extend .labels-buttons;
