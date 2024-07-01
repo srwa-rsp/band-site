@@ -17,7 +17,27 @@
       }
 
 }
+.hero{
+    background: url("/assets/Images/hero-bio.jpg") no-repeat center/cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 42vh;
+    
+  @include mixins.padding-x(vars.$spacing-small);
 
+  @include mixins.tablet {
+    @include mixins.padding-x(vars.$spacing-medium);
+    height: 100vh;
+  }
+
+  @include mixins.desktop {
+    @include mixins.padding-x(vars.$spacing-large);
+  }
+
+  
+}
 .about{
     display: flex;
     flex-direction: column;
@@ -110,9 +130,14 @@
         flex-direction: row;
         align-items: flex-start;
         gap: 1rem;
+        margin: 1rem 0;
 
         @include mixins.tablet{
            padding: 1rem;
+        }
+
+        @include mixins.desktop{
+            padding: 1rem 20rem;
         }
     }
 
@@ -123,7 +148,7 @@
         border-radius: 4px;
         border: 1px solid vars.$mercury;
         font-size: 1rem;
-        // background-color: ;
+        background-color:vars.$alabaster ;
         margin-top: 4px;
 
         @include mixins.tablet{
@@ -131,6 +156,8 @@
         }
 
       }
+
+    
 
       &__input:focus{
         outline: 1px solid #d22d2d;
@@ -143,9 +170,8 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap-reverse;
         gap: 1rem;
-        height: 50vh;
+ 
       }
 
       &__avatar{
@@ -163,6 +189,10 @@
         display: flex;
         flex-direction: column;
 
+
+        @include mixins.desktop{
+            padding: 1rem 20rem;
+        }
       }
       &__info-container{
         width: 100%;
