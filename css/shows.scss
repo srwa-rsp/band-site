@@ -1,0 +1,119 @@
+@use "partials/typography";
+@use "partials/variables" as vars;
+@use "partials/mixins";
+@use "partials/global";
+
+.hero{
+    background: url("/assets/Images/hero-shows.jpg") no-repeat center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    position: relative;
+    @include mixins.padding-y(vars.$spacing-small);
+
+    @include mixins.padding-x(vars.$spacing-small);
+
+    @include mixins.tablet {
+      @include mixins.padding-x(vars.$spacing-medium);
+      height: 100vh;
+    }
+  
+    @include mixins.desktop {
+      @include mixins.padding-x(vars.$spacing-large);
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+  
+
+    &__description{
+        display: flex;
+        flex-direction: column;
+
+    }
+     &__title{
+        margin-right: 5rem;
+     }
+
+     &__album{
+        z-index: 2;
+        @include mixins.font-size(vars.$subheader-font)
+     }
+
+     &__soundcloud{
+        height: 20vh;
+        @include mixins.tablet{
+            width: 70%;
+        }
+        @include mixins.desktop{
+            width: 50rem;
+        }
+     }
+}
+
+.shows{
+
+&__title{
+  @include mixins.padding-x(vars.$spacing-small);
+  @include mixins.padding-y(vars.$spacing-small);
+}
+  @include mixins.tablet{
+      @include mixins.padding-x(vars.$spacing-medium);
+      @include mixins.padding-y(vars.$spacing-medium);
+  }
+
+  @include mixins.desktop{
+      @include mixins.padding-x(vars.$spacing-large);
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    &__list{
+      @include mixins.tablet{
+        display: flex;
+        flex-direction: column;
+        // width: 70%;
+      }
+      @include mixins.desktop{
+        width: 70%;
+      }
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        border-bottom: 2px solid vars.$mercury;
+        font-size: 1.2rem;
+          
+      @include mixins.padding-x(vars.$spacing-small);
+      @include mixins.padding-y(vars.$spacing-small);
+
+      @include mixins.tablet{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        &:first-of-type{
+          .shows__label {
+            display: block;
+            margin-bottom: 3rem;
+          }
+        }
+      }
+    }
+
+ 
+      &__label {
+
+        @include mixins.tablet {
+          display: none;
+        }
+
+    }
+}
