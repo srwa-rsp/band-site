@@ -222,10 +222,25 @@
       &__info{
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        gap:2rem;
 
         &--date{
             color: vars.$silver;
         }
+      }
+
+      &__heart{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+        color: grey;
+        cursor: pointer;
+        .fas{
+          color: red;
+        }
+
       }
 }
 

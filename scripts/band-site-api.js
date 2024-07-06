@@ -11,7 +11,6 @@ class BandSiteApi {
         `${this.baseUrl}/comments?api_key=${this.apiKey}`,
         commentObj
       );
-      console.log(response);
       return response.data;
     } catch (error) {
       console.log("post commnets error",error);
@@ -24,6 +23,17 @@ class BandSiteApi {
         return response.data
     } catch (error) {
       console.log("get comments error",error);
+    }
+  }
+
+  async likeComment(id) {
+    try {
+      const response = await axios.put(
+        `${this.baseUrl}/comments/${id}/like?api_key=${this.apiKey}`
+      );
+      return response.data;
+    } catch (error) {
+      console.log("put commnet like error",error);
     }
   }
 

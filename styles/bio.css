@@ -573,7 +573,20 @@ h6 {
 .comment__info {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
 }
 .comment__info--date {
   color: #AFAFAF;
+}
+.comment__heart {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: grey;
+  cursor: pointer;
+}
+.comment__heart .fas {
+  color: red;
 }/*# sourceMappingURL=bio.css.map */

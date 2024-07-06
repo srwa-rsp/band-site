@@ -63,9 +63,29 @@ function renderComments(array) {
         dateElement.classList.add("comment__info--date");
         commentInfo.appendChild(dateElement);
     
+
+        const commentText = document.createElement("div");
+        commentText.classList.add("comment__info");
+        container.appendChild(commentText);
+
         const messageElement = document.createElement("p");
         messageElement.innerText = array[i].comment;
-        container.appendChild(messageElement);
+        commentText.appendChild(messageElement);
+
+        //like
+         const likeContainer = document.createElement("div")
+         likeContainer.classList.add("comment__heart")
+         commentText.appendChild(likeContainer)
+
+         const likeIcon = document.createElement("i")
+      
+         array[i].likes != 0 ?  likeIcon.classList.add("fas","fa-heart"):  likeIcon.classList.add("far", "fa-heart")
+         likeContainer.appendChild(likeIcon)
+         likeIcon.addEventListener('click', () => likeComment(array[i].id))
+
+         const likeCounter = document.createElement("span")
+         likeCounter.innerText = array[i].likes
+         likeContainer.appendChild(likeCounter)
     }
 }
 
@@ -74,7 +94,6 @@ const form = document.querySelector(".comment__form");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    console.log("form submitted");
     const name = event.target.name.value;
     const comment = event.target.comment.value;
 
@@ -88,4 +107,12 @@ form.addEventListener("submit", (event) => {
     event.target.reset();
 });
 
-
+async function likeComment(id){
+  const bandSiteApi = new BandSiteApi(api_key)
+  try{
+      await bandSiteApi.likeComment(id); 
+      await getCommentsList();
+  }catch(error){
+    console.error('Error:', error);
+  }
+}
