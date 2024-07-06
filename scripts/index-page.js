@@ -72,13 +72,17 @@ function renderComments(array) {
         messageElement.innerText = array[i].comment;
         commentText.appendChild(messageElement);
 
-        //like
+        //buttons container
+        const buttonsContainer = document.createElement("div")
+        buttonsContainer.classList.add("comment__button-container")
+        commentText.appendChild(buttonsContainer)
+
+        //like element
          const likeContainer = document.createElement("div")
          likeContainer.classList.add("comment__heart")
-         commentText.appendChild(likeContainer)
+         buttonsContainer.appendChild(likeContainer)
 
          const likeIcon = document.createElement("i")
-      
          array[i].likes != 0 ?  likeIcon.classList.add("fas","fa-heart"):  likeIcon.classList.add("far", "fa-heart")
          likeContainer.appendChild(likeIcon)
          likeIcon.addEventListener('click', () => likeComment(array[i].id))
@@ -86,10 +90,19 @@ function renderComments(array) {
          const likeCounter = document.createElement("span")
          likeCounter.innerText = array[i].likes
          likeContainer.appendChild(likeCounter)
+
+         //delete element
+         const deleteContainer = document.createElement("div")
+         deleteContainer.classList.add("comment__delete")
+         buttonsContainer.appendChild(deleteContainer)
+         const deleteIcon = document.createElement("i")
+         deleteIcon.classList.add("far", "fa-trash-alt")
+         deleteContainer.appendChild(deleteIcon)
+         deleteIcon.addEventListener('click', () => deleteComment(array[i].id))
     }
 }
 
-// Form
+// Form submit
 const form = document.querySelector(".comment__form");
 
 form.addEventListener("submit", (event) => {
@@ -107,10 +120,22 @@ form.addEventListener("submit", (event) => {
     event.target.reset();
 });
 
+//like function
 async function likeComment(id){
   const bandSiteApi = new BandSiteApi(api_key)
   try{
       await bandSiteApi.likeComment(id); 
+      await getCommentsList();
+  }catch(error){
+    console.error('Error:', error);
+  }
+}
+
+//delete function
+async function deleteComment(id){
+  const bandSiteApi = new BandSiteApi(api_key)
+  try{
+      await bandSiteApi.deleteComment(id); 
       await getCommentsList();
   }catch(error){
     console.error('Error:', error);

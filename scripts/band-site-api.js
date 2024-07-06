@@ -36,6 +36,16 @@ class BandSiteApi {
       console.log("put commnet like error",error);
     }
   }
+  async deleteComment(id) {
+    try {
+      const response = await axios.delete(
+        `${this.baseUrl}/comments/${id}?api_key=${this.apiKey}`
+      );
+      return response.data;
+    } catch (error) {
+      console.log("put commnet like error",error);
+    }
+  }
 
   async getShows(){
     try{
