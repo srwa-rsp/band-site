@@ -1,19 +1,35 @@
+import { getCurrentDate, api_key } from "./helpers.js";
+import BandSiteApi from "./band-site-api.js";
+
 const commentListContainer = document.querySelector(".comment__list");
 
-const commentsList = [
-    {name:"Victor Pinto", date:"11/02/2023", message:"This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."},
-    {name:"Christina Cabrera", date:"10/28/2023", message:"I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
-    {name:"Isaac Tadesse", date:"10/20/2023", message:"I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."}
-];
+async function getCommentsList (){
+    const bandSiteApi = new BandSiteApi(api_key)
+    try{
+      const commentsList = await bandSiteApi.getComments();
+      const sortedCommentList = commentsList.sort((a,b)=> b.
+      timestamp - a.timestamp
+      )
+      renderComments(sortedCommentList)
+      return commentsList
+    }catch(error){
+      console.error('Error:', error);
+    }
+  }
 
-function getCurrentDate() {
-    const today = new Date();
-    const day = String(today.getDate()).padStart(2, '0');
-    const month = String(today.getMonth() + 1).padStart(2, '0'); 
-    const year = today.getFullYear();
+  //initial render
+  getCommentsList ()
   
-    return `${day}/${month}/${year}`;
-}
+  async function postComment(comment){
+    const bandSiteApi = new BandSiteApi(api_key)
+    try{
+        await bandSiteApi.postComment(comment); 
+        await getCommentsList();
+    }catch(error){
+      console.error('Error:', error);
+    }
+  }
+
 
 function renderComments(array) {
     // Clear existing comments
@@ -42,12 +58,13 @@ function renderComments(array) {
         commentInfo.appendChild(nameElement);
         
         const dateElement = document.createElement("span");
-        dateElement.innerText = array[i].date;
+        dateElement.innerText = getCurrentDate(array[i].timestamp) 
+        ;
         dateElement.classList.add("comment__info--date");
         commentInfo.appendChild(dateElement);
     
         const messageElement = document.createElement("p");
-        messageElement.innerText = array[i].message;
+        messageElement.innerText = array[i].comment;
         container.appendChild(messageElement);
     }
 }
@@ -63,18 +80,12 @@ form.addEventListener("submit", (event) => {
 
     const commentEl = {
         name: name,
-        date: getCurrentDate(),
-        message: comment
+        comment: comment
     };
+    postComment(commentEl)
 
-    commentsList.unshift(commentEl);
-    console.log(commentsList);
-
-    // Re-render
-    renderComments(commentsList);
-
-+    event.target.reset();
+    // reset 
+    event.target.reset();
 });
 
-// Initial render
-renderComments(commentsList);
+
