@@ -1,60 +1,22 @@
+import { getCurrentDate , api_key} from "./helpers.js";
+import BandSiteApi from "./band-site-api.js";
+
 const showsContainer = document.querySelector(".shows__list");
 
-const showsList = [
-  {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane ",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 17 2024 ",
-    venue: "Pier 3 East  ",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Oct 12 2024 ",
-    venue: "View Lounge  ",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 16 2024 ",
-    venue: "Hyatt Agency  ",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center  ",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 18 2024 ",
-    venue: "Press Club ",
-    location: "San Francisco, CA",
-  },
-];
+(async ()=>{
+  const bandSiteApi = new BandSiteApi(api_key)
+  try{
+    const showsList = await bandSiteApi.getShows()
+    renderShows(showsList)
+    return showsList
+  }catch(error){
+    console.error('Error:', error);
+  }
+})()
 
 function renderShows(array) {
-  //hidden labels
-  //   const hiddenLabelsContainer = document.createElement("ul");
-  //   hiddenLabelsContainer.classList.add("shows__item-hidden");
-  //   showsContainer.appendChild(hiddenLabelsContainer);
-
-  //   const hiddenDateElement = document.createElement("li");
-  //   hiddenDateElement.innerText = "date"
-  //   hiddenDateElement.classList.add("label")
-  //   hiddenLabelsContainer.appendChild(hiddenDateElement)
-
-  //   const hiddenVenueElement = document.createElement("li");
-  //   hiddenVenueElement.innerText = "venue"
-  //   hiddenVenueElement.classList.add("label")
-  //   hiddenLabelsContainer.appendChild(hiddenVenueElement)
-
-  //   const hiddenLocationElement = document.createElement("li");
-  //   hiddenLocationElement.innerText = "location"
-  //   hiddenLocationElement.classList.add("label")
-  //   hiddenLabelsContainer.appendChild(hiddenLocationElement)
-
   for (let i = 0; i < array.length; i++) {
+    
     //ul
     const showItem = document.createElement("ul");
     showItem.classList.add("shows__item");
@@ -70,7 +32,7 @@ function renderShows(array) {
     dateElement.appendChild(dateLabel);
 
     const dateInfo = document.createElement("strong");
-    dateInfo.innerText = array[i].date;
+    dateInfo.innerText = getCurrentDate(array[i].date);
     dateElement.appendChild(dateInfo);
 
     //second li -- venue
@@ -83,7 +45,7 @@ function renderShows(array) {
     venueElement.appendChild(venueLabel);
 
     const venueInfo = document.createElement("span");
-    venueInfo.innerText = array[i].venue;
+    venueInfo.innerText = array[i].place;
     venueElement.appendChild(venueInfo);
 
     //third li -- location
@@ -107,7 +69,7 @@ function renderShows(array) {
   }
 }
 
-renderShows(showsList);
+// renderShows(showsList);
 
 document.querySelectorAll(".shows__item").forEach((item) => {
   item.addEventListener("click", (e) => {
