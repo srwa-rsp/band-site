@@ -129,34 +129,13 @@
 
     }
 
-
-
-    // &__item-hidden{
-    //   display: none;
-    //   @extend .shows__item;
-    //   @include mixins.tablet{
-    //     display: flex;
-    //     border-bottom: none;
-    //     justify-content: flex-start;
-    //     gap:14rem
-    //   }
-    // }
-
-    // &__item-hidden:hover{
-    //   cursor: default;
-    //   background-color: white;
-    // }
- 
       &__label {     
         @include mixins.tablet {
           display: none;
         }
     }
-
 }
 
 .active{
-      
   background-color: vars.$mercury;
-
 }
